@@ -8,8 +8,30 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 
 function App() {
   console.log('data', data)
-  const [tasks, setTasks] = useState([]);
-  
+  const [tasks, setTasks] = useState([]) // this should be replaced new boardTasks
+  const [boardTasks, setBoardTasks] = useState([{
+    id: 0,
+    task: []
+  },
+  {
+    id: 1,
+    task: []
+  },
+  {
+    id: 2,
+    task: []
+  },
+  {
+    id: 3,
+    task: []
+  }
+  ]);
+
+  const handleNext = (id) => {
+    console.log('id', id)
+    //increment the id by Id
+    //push the task of specfic id into task array
+  }
   
   const addTaskHandler = (task)=> {
     console.log('task values', task)
@@ -19,18 +41,16 @@ function App() {
   }
   
   const Card = data.map((item,index) => (
-
     <BoardCard title={item.title} tasks={tasks} addTaskHandler={addTaskHandler} index={index}/>
   ));
 
   return (
     
     
-    <DndProvider backend={HTML5Backend}>
-     <div style={{ display: "flex", pading: "100px", width: "100%", margin: "auto", flexWrap: "wrap", backgroundColor: "blue" }}>
+
+     <div style={{ display: "flex", padding: "100px", width: "100%", margin: "auto", flexWrap: "wrap", backgroundColor: "blue" }}>
         {Card}
       </div>
-      </DndProvider>
    
   )
 }

@@ -25,7 +25,7 @@ const ExpandMore = styled((props) => {
     }),
 }));
 
-export default function BoardCard({ title, tasks, addTaskHandler, index }) {
+export default function BoardCard({ title, tasks, addTaskHandler, index , handleNext }) {
     console.log('index from Board', index)
     const [state, setState] = React.useState(data)
     const [expanded, setExpanded] = React.useState(false);
@@ -58,7 +58,7 @@ export default function BoardCard({ title, tasks, addTaskHandler, index }) {
                                 <Typography variant="body1" color="text.primary">
                                     {task}
                                 </Typography>
-                                <Button variant="primary" onClick>Next</Button>
+                                <Button variant="primary" onClick ={()=>handleNext(index)}>Next</Button>
                             </div>))}
                         <AddNewTask addTaskHandler={addTaskHandler} />
                     </CardContent>
