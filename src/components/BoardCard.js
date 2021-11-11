@@ -11,19 +11,9 @@ import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
 import data from '../components/data/cardData';
 import AddNewTask from './AddNewTask';
-import { useDrop } from 'react-dnd';
 import { Button } from '@mui/material';
 
-const ExpandMore = styled((props) => {
-    const { expand, ...other } = props;
-    return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-    }),
-}));
+
 
 export default function BoardCard({ title, tasks, addTaskHandler, index , handleNext }) {
     console.log('index from Board', index)

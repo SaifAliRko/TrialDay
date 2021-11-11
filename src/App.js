@@ -1,10 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
 import BoardCard from './components/BoardCard';
 import data from './components/data/cardData'
 import { useState } from 'react';
-import { DndProvider } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
+
 
 function App() {
   console.log('data', data)
